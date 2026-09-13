@@ -2,6 +2,8 @@
 
 A local Three.js adventure through an imagined Jiufen. A returning traveller recovers six fictional childhood memories through family, food and familiar places.
 
+[Watch the demo on YouTube](https://youtu.be/lh7YibZymNA)
+
 [Final demo video (111.3 seconds, original 4K MP4)](https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/gpt6.mp4) · [Download the playable HTML](https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/evermemory.html) · [Hackathon release](https://github.com/hsiaotingluv/EverMemory/releases/tag/hackathon-demo-2026-09-13)
 
 The original demo is hosted as a release asset because it exceeds GitHub's regular Git file limit. Its duration, format and SHA-256 checksum are recorded in [demo/manifest.json](demo/manifest.json).
