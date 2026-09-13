@@ -32,15 +32,33 @@ Solve a lantern riddle. Earn coins for another tea.
 
 ![The traveller outside Rainlight Teahouse, with the tea table visible through the doorway](docs/screenshots/04-rainlight-teahouse.png)
 
-Choose your cup, brew tea, and uncover a flashback.
+Step inside the hidden teahouse and find the tea table.
 
-### 5. A little wish
+### 5. What comes back?
+
+![Tea selection with mountain oolong, honey black tea and jasmine green tea](docs/screenshots/tea-selection.png)
+
+Choose a tea to uncover a memory. Your first tasting is free.
+
+### 6. A little patience
+
+![The four-step tea-making sequence puzzle with a hint to read the instruction card](docs/screenshots/tea-ritual.png)
+
+Put the four tea-making steps in order, then watch your tea brew.
+
+### 7. The extra purple one
+
+![A childhood memory at Grandma's taro stall, shown as an illustrated story card](docs/screenshots/taro-stall-memory.png)
+
+Visit Grandma's taro stall and let a childhood memory come back.
+
+### 8. A little wish
 
 ![The wishing terrace form with a wish to find our way back to one another](docs/screenshots/05-write-a-wish.png)
 
 Write a wish for your lantern to carry.
 
-### 6. A sky full of light
+### 9. A sky full of light
 
 ![Glowing lanterns rising into the dusk sky above the mountains](docs/screenshots/06-lantern-release.png)
 
