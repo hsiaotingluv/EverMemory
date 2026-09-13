@@ -4,6 +4,46 @@ A local Three.js adventure through an imagined Jiufen. A returning traveller rec
 
 [Watch the demo on YouTube](https://youtu.be/lh7YibZymNA)
 
+## A walk through the memory
+
+### 1. The way home
+
+[![EverMemory start page overlooking Jiufen's lantern-lined hillside; select to watch the demo](docs/screenshots/01-start-page.png)](https://youtu.be/lh7YibZymNA)
+
+Return to an imagined Jiufen, where familiar streets hold the memories of childhood family visits.
+
+### 2. The old bus stop
+
+![The traveller at the old bus stop, with a folded ticket on the left and a collectible teacup on the right](docs/screenshots/02-old-bus-stop.png)
+
+Begin at the old bus stop, recover a folded ticket, and collect a teacup before following the lantern-lit lanes.
+
+### 3. A light, a little riddle
+
+![A solved lantern riddle asking about the moon's reflection, with a reward of ten coins](docs/screenshots/03-lantern-riddle.png)
+
+Solve a lantern riddle to earn 10 coins toward another tea and another memory.
+
+### 4. Rainlight Teahouse
+
+![The traveller outside Rainlight Teahouse, with an open doorway revealing the tea table and ceramic jars](docs/screenshots/04-rainlight-teahouse.png)
+
+Find the hidden teahouse, choose your collected cup, and brew tea to restore energy and reveal a flashback.
+
+### 5. A little wish
+
+![The wishing terrace dialog with a wish to always find our way back to one another](docs/screenshots/05-write-a-wish.png)
+
+Write a wish at the terrace and keep it in your memory journal.
+
+### 6. A sky full of light
+
+![Hundreds of glowing lanterns rising into a rose-coloured dusk sky above the mountains](docs/screenshots/06-lantern-release.png)
+
+Release your lantern into the dusk and watch hundreds rise with it.
+
+## Demo and downloads
+
 [Final demo video (111.3 seconds, original 4K MP4)](https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/gpt6.mp4) · [Download the playable HTML](https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/evermemory.html) · [Hackathon release](https://github.com/hsiaotingluv/EverMemory/releases/tag/hackathon-demo-2026-09-13)
 
 The original demo is hosted as a release asset because it exceeds GitHub's regular Git file limit. Its duration, format and SHA-256 checksum are recorded in [demo/manifest.json](demo/manifest.json).
