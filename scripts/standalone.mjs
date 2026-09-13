@@ -3,7 +3,13 @@ const html = await readFile('dist/index.html', 'utf8');
 const scriptPath = html.match(/<script[^>]+src="([^"]+)"[^>]*><\/script>/)?.[1];
 const cssPath = html.match(/<link[^>]+href="([^"]+\.css)"[^>]*>/)?.[1];
 if (!scriptPath || !cssPath) throw new Error('The build has no script or stylesheet entry.');
-const js = await readFile('dist' + scriptPath, 'utf8');
+let js = await readFile('dist' + scriptPath, 'utf8');
+const model = await readFile('public/models/jiufen-refinements.glb');
+js = js.replaceAll('/models/jiufen-refinements.glb', `data:model/gltf-binary;base64,${model.toString('base64')}`);
+for (const name of ['rain','lanterns','mooncake']) {
+ const clip = await readFile(`public/memories/${name}.webm`);
+ js = js.replaceAll(`/memories/${name}.webm`, `data:video/webm;base64,${clip.toString('base64')}`);
+}
 let css = await readFile('dist' + cssPath, 'utf8');
 for (const name of ['serif', 'serif-italic', 'sans']) {
  const font = await readFile(`public/fonts/${name}.ttf`);

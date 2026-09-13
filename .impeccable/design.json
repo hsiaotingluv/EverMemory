@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T05:52:25.796746+00:00",
+  "generatedAt": "2026-09-13T08:05:28.352639+00:00",
   "title": "Design System: EverMemory",
   "extensions": {
     "colorMeta": {
@@ -328,6 +328,26 @@
       "memory-body": {
         "displayName": "Remembered story",
         "purpose": "Readable serif narrative passages at desktop and mobile sizes."
+      },
+      "activity-title": {
+        "displayName": "Activity heading",
+        "purpose": "Shared headings across riddles, cups, tea rituals and provisions; 38px on mobile."
+      },
+      "activity-item": {
+        "displayName": "Activity item",
+        "purpose": "Serif tea names, cup names and provisions section headings; the mobile component variants remain local."
+      },
+      "activity-body": {
+        "displayName": "Activity introduction",
+        "purpose": "Shared 13px introductions in paper activity dialogs."
+      },
+      "activity-question": {
+        "displayName": "Question and reward",
+        "purpose": "Serif riddle questions and short memory-reward passages."
+      },
+      "traditional-chinese": {
+        "displayName": "Traditional Chinese fallback",
+        "purpose": "Taiwan-specific serif fallback for zh-Hant-TW labels and canvas place signs. These fonts are system-dependent, not self-hosted."
       }
     },
     "shadows": [
@@ -340,6 +360,16 @@
         "name": "memory-prompt",
         "value": "0 10px 28px #1b322830",
         "purpose": "Separate the nearby interaction from the scene."
+      },
+      {
+        "name": "provisions-pouch",
+        "value": "0 4px 20px #263b3126",
+        "purpose": "Separate the small provisions button from the town."
+      },
+      {
+        "name": "energy-thought",
+        "value": "0 5px 20px #263b3126",
+        "purpose": "Lift a temporary thought near the traveller."
       }
     ],
     "motion": [
@@ -360,8 +390,23 @@
       },
       {
         "name": "reduced-motion",
-        "value": "OS preference or .reduced-motion disables decorative animation and transitions",
-        "purpose": "Preserve a still exploration option."
+        "value": "OS preference or .reduced-motion suppresses CSS animation; scene effects simplify when reduced is true",
+        "purpose": "Remove extra lantern sway and drift and simplify pouring while retaining the core ascent and timed ritual."
+      },
+      {
+        "name": "tea-brewing",
+        "value": "8s; four 2s phases",
+        "purpose": "Warming, leaves, steeping and pouring share a 3D preview, status line and thin rust progress bar."
+      },
+      {
+        "name": "lantern-ceremony",
+        "value": "360 instanced companions; staggered 3–14s starts; fade from 48–64s",
+        "purpose": "The traveller’s lantern leads a warm fleet into the dusk sky; the sparse wish overlay leaves the sky open."
+      },
+      {
+        "name": "tea-film",
+        "value": "8s; silent; user-started",
+        "purpose": "Original symbolic memory films retain play, skip, replay and readable fallback controls."
       }
     ],
     "breakpoints": [
@@ -425,29 +470,55 @@
       "css": ".ds-paper{width:520px;max-width:100%;padding:42px;background:var(--paper,#f3eddf);color:var(--ink,#354338);border-radius:9px;box-shadow:0 24px 90px #14282044}.ds-paper h2{margin:0;font:500 47px/.95 var(--serif,\"Memory Serif\",Georgia,serif);letter-spacing:-.025em}.ds-paper em{font-weight:400;color:var(--rust,#a24932)}.ds-paper p{margin:18px 0 0;font:12px/1.7 var(--sans,\"Memory Sans\",sans-serif);color:var(--soft,#626a55)}"
     },
     {
-      "name": "Journal entry",
-      "kind": "custom",
-      "description": "An actual collected-memory row, using the project’s ticket icon and first memory.",
-      "html": "<button class=\"ds-entry\"><span class=\"ds-entry-icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h16v4c-3 0-3 4 0 4v4H4v-4c3 0 3-4 0-4ZM15 6v2m0 2v2m0 2v2m0 1v1M7 9h5m-5 3h4m-4 3h5\"/></svg></span><span><strong>One more bend</strong><small>The old bus stop</small></span><span class=\"ds-entry-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M6 5h13v13\"/></svg></span></button>",
-      "css": ".ds-entry{display:flex;align-items:center;gap:15px;padding:16px 0;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line,#cdc9b6);background:none;color:var(--ink,#354338);cursor:pointer}.ds-entry-icon{width:40px;height:40px;display:grid;place-items:center;color:var(--rust,#a24932);flex-shrink:0}.ds-entry-icon svg{width:27px;height:27px;stroke-width:1.3}.ds-entry strong{font:600 22px var(--serif,\"Memory Serif\",Georgia,serif);display:block}.ds-entry small{display:block;font:10px/1.5 var(--sans,\"Memory Sans\",sans-serif);color:var(--soft,#626a55);margin-top:3px}.ds-entry-arrow{margin-left:auto}.ds-entry-arrow svg{width:16px;height:16px}.ds-entry:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px;}"
-    },
-    {
       "name": "Memory progress",
       "kind": "custom",
       "description": "Six petal-like marks; warm fill distinguishes collected memories.",
       "html": "<div class=\"ds-memory-progress\" aria-label=\"Two of six memories\"><span aria-hidden=\"true\"><i class=\"ds-found\"></i><i class=\"ds-found\"></i><i></i><i></i><i></i><i></i></span><small>2 / 6 memories</small></div>",
       "css": ".ds-memory-progress{display:flex;flex-direction:column;gap:9px;color:#f3eddf;text-shadow:0 1px 6px #253a2f;padding:16px;background:#354338}.ds-memory-progress>span{display:flex;gap:6px}.ds-memory-progress i{width:11px;height:11px;border:1px solid #f6e4b1;transform:rotate(45deg);border-radius:50% 50% 0 50%}.ds-memory-progress i.ds-found{background:#f3cc7a}.ds-memory-progress small{font:10px var(--sans,\"Memory Sans\",sans-serif)}"
+    },
+    {
+      "name": "Wish field",
+      "kind": "input",
+      "refersTo": "field-wish",
+      "description": "A paper textarea with the shared rust focus outline and caret.",
+      "html": "<label class=\"ds-wish-label\" for=\"ds-wish\">Your wish</label><textarea class=\"ds-wish\" id=\"ds-wish\" rows=\"3\" maxlength=\"120\" placeholder=\"May we always find our way back to one another.\"></textarea><div class=\"ds-wish-meta\"><span>Kept in your memory journal.</span><span>0 / 120</span></div>",
+      "css": ".ds-wish-label{display:block;font:500 11px var(--sans,\"Memory Sans\",sans-serif);color:var(--ink,#354338);margin-bottom:11px}.ds-wish{display:block;width:100%;resize:vertical;min-height:110px;padding:15px;border:1px solid var(--line,#cdc9b6);border-radius:4px;background:transparent;color:var(--ink,#354338);font:16px/1.6 var(--sans,\"Memory Sans\",sans-serif);caret-color:var(--rust,#a24932)}.ds-wish::placeholder{color:var(--soft,#626a55)}.ds-wish:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px}.ds-wish-meta{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font:11px var(--sans,\"Memory Sans\",sans-serif);color:var(--soft,#626a55)}@media(max-width:700px){.ds-wish-meta{font-size:10px}}"
+    },
+    {
+      "name": "Activity option",
+      "kind": "button",
+      "refersTo": "activity-choice",
+      "description": "An outlined choice shared by lantern riddles and the tea ritual.",
+      "html": "<button class=\"ds-activity-choice\">Warm the brewing vessel</button>",
+      "css": ".ds-activity-choice{padding:14px 17px;background:transparent;border:1px solid var(--line,#cdc9b6);border-radius:4px;color:var(--ink,#354338);text-align:left;font:13px var(--sans,\"Memory Sans\",sans-serif);cursor:pointer}.ds-activity-choice:hover{background:#e8dfc7}.ds-activity-choice:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px}.ds-activity-choice.ds-correct{border-color:var(--rust,#a24932);color:var(--rust,#a24932)}.ds-activity-choice:disabled:not(.ds-correct){opacity:.55;cursor:wait}"
+    },
+    {
+      "name": "Tea choice",
+      "kind": "button",
+      "refersTo": "tea-choice",
+      "description": "An open tea row with a serif name, supporting note and rust price or replay status.",
+      "html": "<button class=\"ds-tea-choice\"><span><strong>Mountain oolong</strong><small>Floral, soft, familiar.</small></span><span class=\"ds-tea-price\">Replay memory · Free</span></button>",
+      "css": ".ds-tea-choice{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;padding:18px 0;border:0;border-bottom:1px solid var(--line,#cdc9b6);background:none;text-align:left;color:var(--ink,#354338);cursor:pointer}.ds-tea-choice strong{font:400 27px var(--serif,\"Memory Serif\",Georgia,serif)}.ds-tea-choice small{display:block;color:var(--soft,#626a55);font:12px var(--sans,\"Memory Sans\",sans-serif);margin-top:7px}.ds-tea-price{max-width:115px;text-align:right;font:11px var(--sans,\"Memory Sans\",sans-serif);color:var(--rust,#a24932)}.ds-tea-choice:hover strong{color:var(--rust,#a24932)}.ds-tea-choice:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px}@media(max-width:700px){.ds-tea-choice strong{font-size:25px}}"
+    },
+    {
+      "name": "Provisions pouch",
+      "kind": "button",
+      "refersTo": "provisions-pouch",
+      "description": "A compact paper tool showing energy, coins and mooncakes, with quieter mobile labels.",
+      "html": "<button class=\"ds-pouch\" aria-label=\"Open cups, coins and mooncakes\"><span class=\"ds-pouch-energy\">94<small>energy</small></span><span>0<small>coins</small></span><span>0<small>mooncakes</small></span><span class=\"ds-pouch-open\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 10h12v6c0 4-12 4-12 0Zm12 1h2c4 0 3 5-2 4M3 21h17M8 3c-2 2 2 3 0 5m5-6c-2 2 2 3 0 5\"/></svg></span></button>",
+      "css": ".ds-pouch{display:flex;gap:18px;align-items:center;padding:12px 16px;border:0;border-radius:6px;color:var(--ink,#354338);background:var(--paper,#f3eddf);box-shadow:0 4px 20px #263b3126;font-family:var(--sans,\"Memory Sans\",sans-serif);cursor:pointer}.ds-pouch>span{display:grid;gap:3px;font-size:17px;font-variant-numeric:tabular-nums}.ds-pouch small{font-size:11px;color:var(--soft,#626a55)}.ds-pouch-open svg{width:24px;height:24px}.ds-pouch.ds-low-energy .ds-pouch-energy{color:var(--rust,#a24932)}.ds-pouch:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px}@media(max-width:700px){.ds-pouch{padding:9px 12px;gap:14px}.ds-pouch>span{font-size:14px}.ds-pouch small{font-size:10px}.ds-pouch-open{display:none!important}}"
     }
   ],
   "narrative": {
     "northStar": "The way home",
-    "overview": "The way home pairs a living hillside with the quiet material of a kept letter. Jiufen's steep stone lanes, stacked tea houses, Traditional Chinese signs, red lanterns and distant mountain ridges establish the place. Warm, vibrant architecture carries the scene; ivory paper and small ink controls give the traveller room to explore.\n\nThe confirmed visual authority is the user's Jiufen moodboard and Sakura Peak reference, implemented directly in Three.js. There is no approved generated design comp. Geometry, weathered canvas textures, signs, SVG icons and ambient audio are authored in code. The current world is a finite, compressed neighbourhood with six fictional memories and an intentionally generic placeholder character. These are prototype constraints, not claims of geographic completeness or a finished character-art system.",
+    "overview": "The way home pairs a living hillside with the quiet material of a kept letter. Jiufen's steep stone lanes, stacked tea houses, Traditional Chinese signs, red lanterns and distant mountain ridges establish the place. Warm, vibrant architecture carries the scene; ivory paper and small ink controls give the traveller room to explore.\n\nThe confirmed visual authority is the user's Jiufen moodboard and Sakura Peak reference, with their later teahouse photographs guiding the warm timber interior. This is the inherited, user-pinned, code-led world. The expansion introduces no new concept roll or generated design comp; the historical seed in the opening direction contract is uncorroborated metadata, not evidence of a fresh visual choice.\n\nAuthored Three.js geometry and weathered canvas textures now sit alongside Blender models: a female traveller, the enterable Rainlight Teahouse and a Kongming lantern. Paper dialogs carry riddles, tea rituals, provisions and wishes. The scene remains a finite, imagined neighbourhood with six fictional street memories and three additional tea memories. The short tea films are original symbolic placeholders; neither the films nor the travellers represent finished production character or cinematic art.",
     "keyCharacteristics": [
       "Warm terracotta, ochre and plaster façades framed by burgundy timber.",
       "Amber light, peach haze and rose-toned dusk; green concentrated in foliage.",
       "Expressive serif titles, readable serif memory passages and restrained sans-serif controls.",
       "Full-viewport exploration with quiet edge controls and layered paper dialogs.",
-      "Original line icons and a recurring petal-shaped memory marker."
+      "Original line icons and a recurring petal-shaped memory marker.",
+      "A furnished timber teahouse, dimensional tea ritual and a sky filled by the traveller's wish."
     ],
     "rules": [
       {
@@ -457,7 +528,7 @@
       },
       {
         "name": "Title First",
-        "body": "Keep the title first in reading order. On the welcome screen, group the Jiufen stamp beside the title at its upper right with a 24px gap and 8px optical top offset, as requested in the browser comment. The stamp stays hidden below 700px. Place HUD and memory dialog location metadata remain below their headings.",
+        "body": "Keep the title first in reading order. On the welcome screen, place the Jiufen stamp immediately after “home.” on the second title line, with a 24px gap and vertical centring, as requested in the latest browser comment. The stamp stays hidden below 700px. Place HUD and memory dialog location metadata remain below their headings.",
         "section": "typography"
       },
       {
@@ -472,7 +543,9 @@
       "Do use the existing serif/sans pairing and title-before-location hierarchy.",
       "Do use original inline SVG line icons with visible focus states and accessible action names.",
       "Do check desktop and touch layouts, especially memory captions, dialog scrolling and joystick clearance.",
-      "Do describe the world as an imagined, compressed neighbourhood and its six memories as fictional."
+      "Do keep teahouse activities within the existing paper hierarchy, with readable prices, feedback and progression states.",
+      "Do preserve rust focus outlines and carets on the wish textarea as well as the name field.",
+      "Do describe the world as an imagined, compressed neighbourhood, the memories as fictional and the short tea films as symbolic placeholders."
     ],
     "donts": [
       "Don't turn the architecture uniformly green or let haze erase the warm colour differences.",
@@ -480,7 +553,8 @@
       "Don't replace the working 3D environment with a flat reference image or imply that a generated comp was approved.",
       "Don't mix platform-dependent text glyphs into the established SVG action-icon system.",
       "Don't rotate mobile memory-art captions into vertical text or place them across the central illustration.",
-      "Don't present the generic character or finite neighbourhood as a completed production art scope."
+      "Don't present the generic character or finite neighbourhood as a completed production art scope.",
+      "Don't expand the interface palette with every ceramic glaze, garment or lantern-light material."
     ]
   }
 }

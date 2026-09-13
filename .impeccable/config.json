@@ -876,6 +876,222 @@
         ],
         "createdAt": "2026-09-13T06:02:28.870Z",
         "reason": "Agent: intentional warm ambient motes drifting through the playable scene; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "noto serif tc",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.477Z",
+        "reason": "Agent: Taiwan-specific CJK fallback for user-requested Traditional Chinese signs and labels."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "52px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.523Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "40px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.569Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ff9a3c",
+        "files": [
+          "src/refinements.js"
+        ],
+        "createdAt": "2026-09-13T07:30:23.615Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffe4a6",
+        "files": [
+          "src/refinements.js"
+        ],
+        "createdAt": "2026-09-13T07:30:23.661Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#263b3126",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.707Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "12px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.751Z",
+        "reason": "Agent: 12px corners distinguish the temporary in-world thought bubble, consistent with its speech role."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "17px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.796Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "46px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.844Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "27px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.890Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "13px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.934Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "29px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:23.980Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "10px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.024Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "26px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.069Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.113Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "28px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.156Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "25px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.203Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.250Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "38px",
+        "files": [
+          "src/minigames.css"
+        ],
+        "createdAt": "2026-09-13T07:30:24.293Z",
+        "reason": "Agent: responsive serif activity headings and compact game controls follow the incumbent paper-and-ink interface at the reviewed size."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#c18a45",
+        "files": [
+          "src/minigame-world.js"
+        ],
+        "createdAt": "2026-09-13T07:30:24.339Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff2b3",
+        "files": [
+          "src/minigame-world.js"
+        ],
+        "createdAt": "2026-09-13T07:30:24.382Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#b6583c",
+        "files": [
+          "src/minigame-world.js"
+        ],
+        "createdAt": "2026-09-13T07:30:24.428Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d66f2f",
+        "files": [
+          "src/minigame-world.js"
+        ],
+        "createdAt": "2026-09-13T07:30:24.473Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#557f7c",
+        "files": [
+          "src/minigame-world.js"
+        ],
+        "createdAt": "2026-09-13T07:30:24.517Z",
+        "reason": "Agent: authored warm lantern light, ceramic glaze or timber material inherited from the Jiufen world; value scoped to this source."
       }
     ]
   }

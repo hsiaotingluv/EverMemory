@@ -1,4 +1,5 @@
 const paths={
+close:'<path d="m6 6 12 12M6 18 18 6"/>',
 arrowUpRight:'<path d="M5 19 19 5M6 5h13v13"/>',
 arrowRight:'<path d="M4 12h16m-6-6 6 6-6 6"/>',
 

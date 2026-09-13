@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { streetHeight, WALKWAYS, MEMORIES, isWalkable } from './story.js';
+import { groundHeight, DOOR_PATHS, TEAHOUSE, insideTeahouse, streetHeight, WALKWAYS, MEMORIES, isWalkable } from './story.js';
+
+import { addRefinements, createFemale } from './refinements.js';
 
 const TAU = Math.PI * 2;
 let seed = 73591;
@@ -45,11 +47,11 @@ function curve(p, points, radius, mat, segments=20) {
 }
 function signTexture(text, background, foreground, vertical=false) {
   const c=document.createElement('canvas');c.width=vertical?256:768;c.height=vertical?768:256;
-  const ctx=c.getContext('2d');ctx.fillStyle=background;ctx.fillRect(0,0,c.width,c.height);
+  c.lang='zh-Hant-TW';const ctx=c.getContext('2d');ctx.fillStyle=background;ctx.fillRect(0,0,c.width,c.height);
   ctx.strokeStyle=foreground;ctx.lineWidth=3;ctx.strokeRect(15,15,c.width-30,c.height-30);
   ctx.fillStyle=foreground;ctx.textAlign='center';ctx.textBaseline='middle';
-  if(vertical){ctx.font='108px serif';[...text].forEach((t,i)=>ctx.fillText(t,128,95+i*(580/Math.max(text.length-1,1))));}
-  else{ctx.font=`${Math.min(120,570/text.length)}px serif`;ctx.fillText(text,384,125);}
+  if(vertical){ctx.font='108px "Noto Serif TC", "Songti TC", serif';[...text].forEach((t,i)=>ctx.fillText(t,128,95+i*(580/Math.max(text.length-1,1))));}
+  else{ctx.font=`${Math.min(120,570/text.length)}px "Noto Serif TC", "Songti TC", serif`;ctx.fillText(text,384,125);}
   const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;return tex;
 }
 function sign(p,text,x,y,z,w,h,background='#634d35',foreground='#ead5a3',vertical=false) {
@@ -138,6 +140,13 @@ function house(parent,{x,z,w=8,d=6,floors=2,colour='#c98759',rot=0,name='',base,
     if(lanterns)for(let xx=-w/2+.65;xx<w/2;xx+=1.6)lantern(p,xx,by+2.50,d/2+.68,.7);
   }
   roof(p,w+1.4,d+1.45,floors*floorH-.1);
+  if(name){
+    box(p,0,1.07,d/2+.24,1.35,2.14,.16,wood);
+    box(p,0,1.2,d/2+.34,1.14,1.72,.05,shutterMat);
+    for(const xx of [-.36,0,.36])box(p,xx,1.65,d/2+.38,.035,.72,.035,trim);
+    ball(p,.40,.91,d/2+.43,.045,.045,.045,trim);
+    box(p,0,.04,d/2+.53,1.75,.08,.8,trim);
+  }
   if(name)sign(p,name,0,2.74,d/2+.9,Math.min(w*.7,4.2),.67);
   return p;
 }
@@ -172,7 +181,7 @@ function batchStatic(root) {
   }
 }
 
-export function createWorld(container) {
+export function createWorld(container, assets) {
   const scene=new THREE.Scene();scene.background=new THREE.Color('#edc298');scene.fog=new THREE.FogExp2('#e8bf91',.0085);
   const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,650);
   const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
@@ -202,23 +211,54 @@ export function createWorld(container) {
   const cloudMat=material('#fff0d3');
   for(let k=0;k<13;k++){const x=range(-180,160),y=range(65,95),z=range(-220,-125);for(let j=0;j<6;j++){const c=ball(scenery,x+j*6,y+range(-2,2),z+range(-3,3),range(6,12),range(2,4),range(3,5),cloudMat);c.castShadow=false;}}
   const town=new THREE.Group();scene.add(town);
+  const teaExterior=new THREE.Group();teaExterior.userData.dynamic=true;scene.add(teaExterior);
   const terrainGeo=new THREE.PlaneGeometry(114,135,58,68);terrainGeo.rotateX(-Math.PI/2);const pos=terrainGeo.attributes.position;
   for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i)-20;const outside=Math.max(0,Math.abs(x)-22);pos.setXYZ(i,x,streetHeight(z)-.65-outside*.8+Math.sin(x*.2)*Math.cos(z*.23)*.23,z);}
   terrainGeo.computeVertexNormals();mesh(town,terrainGeo,material('#818764'));
 
   // Entire walkable footprint has a matching visible stone surface.
   const stones=['#b39a7e','#c0a185','#c9b095','#b29e8b','#a89786','#c6aa8d'].map(c=>material(c));
-  for(let z=-51;z<=26;z+=.7)for(let x=-22;x<=23;x+=1.2){
+  for(let z=-74;z<=26;z+=.7)for(let x=-38;x<=36;x+=.6){
       if(!WALKWAYS.some(path=>x>=path.x1&&x<=path.x2&&z>=path.z1&&z<=path.z2))continue;
-      const sy=streetHeight(z);const b=box(town,x,sy-.12,z,1.16,.28,.665,pick(stones));b.rotation.y=range(-.012,.012);
+      if(insideTeahouse(x,z))continue;
+      const sy=groundHeight(x,z);const b=box(town,x,sy-.12,z,.575,.28,.665,pick(stones));b.rotation.y=range(-.012,.012);
   }
   for(const [z1,z2] of [[12,2],[-6,-20],[-30,-42]]){
-    for(let z=z1;z>z2;z-=.7)box(town,0,streetHeight(z)-.11,z,9.2,.26,.16,material('#cbc0a4'));
-    for(const side of [-1,1])rail(town,[side*4.45,streetHeight(z1),z1],[side*4.45,streetHeight(z2),z2]);
+    for(let z=z1;z>z2;z-=.7)box(town,0,streetHeight(z)-.11,z,5.4,.26,.16,material('#cbc0a4'));
+    for(const side of [-1,1])rail(town,[side*2.72,streetHeight(z1),z1],[side*2.72,streetHeight(z2),z2]);
   }
   for(const [z,x1,x2] of [[26,-9,9],[1.5,-19,-5],[-5.5,-19,-5],[-29.5,-22,-5],[-20.5,-22,-5],[-50,-21,-5],[-42.5,-21,-5]]){
     box(town,(x1+x2)/2,streetHeight(z)-2,z,x2-x1,4,.45,material('#777966'));rail(town,[x1,streetHeight(z),z],[x2,streetHeight(z),z]);
   }
+  // Level shopfront paths begin at the lower landing. Retaining walls and
+  // rails separate them from the rising stairs and leave each door clear.
+  for(const p of DOOR_PATHS){
+    for(const side of [-1,1]){
+      const outer=side<0?p.left:p.right;
+      rail(town,[side*3.3,p.y,p.z1],[side*3.3,p.y,p.z2-.8]);
+      rail(town,[outer,p.y,p.z1],[side*3.3,p.y,p.z1]);
+      box(town,side*3.05,(p.y+streetHeight(p.z1))/2-.1,(p.z1+p.z2-.9)/2,.22,Math.max(.2,streetHeight(p.z1)-p.y),p.z2-p.z1-.9,material('#9b8270'));
+    }
+  }
+  // The ridge promenade joins a furnished teahouse to an open wishing terrace.
+  for(const [x,z,w,d] of [[-31,-66.5,14,18],[27,-64,18,18],[-5,-61.3,48,4.6],[-19,-54,4,15]]){
+    box(town,x,8.8,z,w,1.75,d,material('#9b8270'));
+    for(const xx of [x-w/2+.4,x+w/2-.4])for(const zz of [z-d/2+.4,z+d/2-.4])box(town,xx,4.9,zz,.48,9.7,.48,wood);
+  }
+  for(const [a,b] of [ [[-38,9.8,-63.6],[-32.5,9.8,-63.6]], [[-29.5,9.8,-63.6],[17.5,9.8,-63.6]], [[-38,9.8,-59],[-21.3,9.8,-59]], [[-16.7,9.8,-59],[17.5,9.8,-59]], [[18,9.8,-73],[36,9.8,-73]], [[36,9.8,-73],[36,9.8,-55]], [[18,9.8,-55],[36,9.8,-55]], [[18,9.8,-73],[18,9.8,-64.2]] ])rail(town,a,b);
+  for(const x of [-35,-27,-16,-6,4,14,35]){lantern(town,x,12.65,-61,.85);pole(town,[x,9.8,-61],[x,13.6,-61],.07,wood);}
+  sign(teaExterior,'雨光茶舍',-31,13.18,-63.75,3.6,.65,'#8f3e32','#ffe2a7');
+  sign(teaExterior,'入內喝茶',-33.4,11.5,-63.7,.6,1.7,'#e0bd8b','#634d35',true);
+  sign(town,'天燈祈願臺',28.9,12.4,-66.65,3.4,.7,'#8f3e32','#ffe2a7');
+  sign(town,'茶舍　天燈',-18.8,11.7,-48.4,2.4,.7);
+  for(const z of [-64.4,-66.5]){lantern(town,-35,12.6,z,.8);lantern(town,-27,12.6,z,.8);}
+  for(const x of [-36,-34,-32,-30,-28,-26])lantern(teaExterior,x,15.8,-63.05,.8);
+  box(town,27,10.42,-66.6,2.8,1.24,1,wood);box(town,27,11.08,-66.6,3,.12,1.2,trim);
+  bench(town,32,9.8,-70);bench(town,21,9.8,-70);
+  // Framed calligraphy and small tea labels use Taiwan's Traditional forms.
+  sign(town,'一盞茶　半日閒',-31,12.8,-73.65,3.3,.55,'#e0bd8b','#634d35');
+  sign(town,'烏龍茶',-27.6,11.4,-71.76,.65,.33,'#e0bd8b','#634d35');
+  sign(town,'高山茶',-26.6,11.4,-71.76,.65,.33,'#e0bd8b','#634d35');
   // Tea houses pack the uphill spine, leaving connected side lanes between them.
   house(town,{x:9.8,z:-12.7,w:12,d:7,floors:3,colour:'#b94832',rot:-Math.PI/2,name:'阿妹茶樓',base:2.2});
   house(town,{x:-9,z:-12.9,w:11.5,d:6.5,floors:2,colour:'#cd9545',rot:Math.PI/2,name:'九份茶坊',base:2.2});
@@ -230,7 +270,7 @@ export function createWorld(container) {
   house(town,{x:15.4,z:-31.5,w:7,d:4,floors:1,colour:'#b85b4e',name:'昇平戲院',base:5.8});
   house(town,{x:-27,z:-29,w:7,d:6,floors:2,colour:'#d4a66a',rot:Math.PI/2,base:4.2});
   for(let i=0;i<13;i++){
-    const x= i%2 ? range(27,42) : range(-44,-30), z=range(-59,18);
+    const x= i%2 ? range(27,42) : range(-44,-30), z=range(-49,18);
     house(town,{x,z,w:range(5,8),d:range(4,6),floors:pick([1,2,3]),colour:pick(['#d9b887','#c78055','#c39551','#ba6250','#78959a']),base:streetHeight(z)-Math.max(0,Math.abs(x)-22)*.72,lanterns:false});
   }
   // Opening gate uses a street sign and ordinary timber posts, not a torii.
@@ -271,9 +311,9 @@ export function createWorld(container) {
   pole(town,[-15,9.8,-46],[-15,13.5,-46],.085,wood);lantern(town,-15,12.5,-46,1.2);
 
   // Courtyard trees, roadside shrubs and trailing balcony foliage.
-  for(const [x,z,s] of [[-13,20,1.1],[14,21,1.3],[-18,4,1],[23,5,1.2],[26,-16,1.5],[-24,-12,1.2],[25,-42,1.45],[-27,-48,1.4],[13,-51,1.2],[32,-57,2]])tree(town,x,streetHeight(z)-.5,z,s);
+  for(const [x,z,s] of [[-13,20,1.1],[14,21,1.3],[-18,4,1],[23,5,1.2],[26,-16,1.5],[-24,-12,1.2],[25,-42,1.45],[-27,-48,1.4],[13,-51,1.2],[40,-53,1.6]])tree(town,x,streetHeight(z)-.5,z,s);
   tree(town,17,streetHeight(15),15,1.45,true);
-  for(let i=0;i<70;i++){const x=range(-45,44),z=range(-67,29);if(isWalkable(x,z, -.7)||Math.abs(x)<15)continue;tree(town,x,streetHeight(z)-.7-Math.max(0,Math.abs(x)-22)*.75,z,range(.65,1.25));}
+  for(let i=0;i<70;i++){const x=range(-45,44),z=range(-67,29);if(isWalkable(x,z, -.9)||(x>-44&&x<-18&&z<-57&&z>-81)||Math.abs(x)<15)continue;tree(town,x,streetHeight(z)-.7-Math.max(0,Math.abs(x)-22)*.75,z,range(.65,1.25));}
   for(let i=0;i<90;i++){const x=pick([-1,1])*range(4.9,5.8),z=range(-50,25);if([-2,-24,-46].some(p=>Math.abs(p-z)<5))continue;foliage(x,streetHeight(z)+.2,z,range(.35,.65),pick(['#738b4e','#8e9d55','#507c48']),town,12);}
   for(const x of [-5.7,5.7])for(const z of [14,1,-5.5,-20.5,-29.5,-42])flowerpot(town,x,streetHeight(z),z,range(.8,1.3));
   // Project-local leaves use instancing to keep a dense canopy affordable.
@@ -290,6 +330,7 @@ export function createWorld(container) {
   // Keep UVs for sign faces while combining static architectural details.
   // Exclude sky and far landscape to preserve fog and shadow behaviour.
   batchStatic(town);
+  const refinements=addRefinements(scene,assets,teaExterior);colliders.push(...refinements.colliders);
   const beacons=[];
   for(const m of MEMORIES){
     const p=new THREE.Group();p.position.set(m.x,streetHeight(m.z)+1.9,m.z);p.userData.dynamic=true;scene.add(p);
@@ -315,7 +356,7 @@ export function createWorld(container) {
   setDusk(dusk);
   const introPosition=new THREE.Vector3(-23,19,32),introTarget=new THREE.Vector3(4.5,9,-18);
   camera.position.copy(introPosition);camera.lookAt(introTarget);
-  return {scene,camera,renderer,beacons,cat,colliders,introPosition,introTarget,setDusk,
+  return {scene,camera,renderer,beacons,cat,refinements,colliders,introPosition,introTarget,setDusk,
     update(time,reduced){if(!reduced){motes.rotation.y=Math.sin(time*.035)*.025;cat.rotation.y=.7+Math.sin(time*.45)*.2;for(const b of beacons){b.group.position.y=b.baseY+Math.sin(time*1.5+b.baseY)*.1;b.diamond.rotation.y=time*.5;b.ring.rotation.z=time*.1;}}},
     setFound(found){for(const b of beacons){const yes=found.includes(b.id);b.diamond.material.color.set(yes?'#b5c9a0':'#fff2b3');b.ring.visible=!yes;b.light.intensity=yes?0:3;}},
     resize(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);},
@@ -323,7 +364,8 @@ export function createWorld(container) {
   };
 }
 
-export function createCharacter(scene,gender='male') {
+export function createCharacter(scene,gender='male',assets) {
+  if(gender==='female')return createFemale(scene,assets);
   const root=new THREE.Group();root.userData.dynamic=true;scene.add(root);
   const skin=material('#d6ad84'),hair=material('#3d382e'),coat=material(gender==='female'?'#ba815d':'#718a77'),trousers=material('#48574d'),shoes=material('#564635');
   const body=new THREE.Group();root.add(body);

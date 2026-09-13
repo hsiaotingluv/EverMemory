@@ -42,3 +42,25 @@ test('guided walks connect every memory without crossing a wall or skipping stai
   const last=route.at(-1);assert(Math.hypot(last.x-memory.x,last.z-memory.z)<1);start=last;
  }
 });
+
+test('every shopfront has a level route from the lower landing to its door',async()=>{
+ const {DOOR_PATHS,groundHeight}=await import('../src/story.js');
+ for(const p of DOOR_PATHS)for(const x of [p.left+.5,p.right-.5]){
+  const route=findRoute(0,p.z2-.4,x,p.doorZ);assert(route.length,`Door at ${x},${p.doorZ}`);
+  assert(route.every(v=>Math.abs(groundHeight(v.x,v.z)-p.y)<.001),'A door route crosses rising stairs');
+  assert.equal(groundHeight(x,p.doorZ),p.y);
+ }
+});
+test('teahouse entry routes cross the doorway, avoid furniture and return outside',async()=>{
+ const {insideTeahouse}=await import('../src/story.js');
+ const route=findRoute(-19,-46,-31,-66.2);assert(route.length);
+ const first=route.find(p=>insideTeahouse(p.x,p.z));assert(first&&first.x>-32.3&&first.x<-29.7,'Route enters through a wall');
+ assert(!isWalkable(-31,-68.6));assert(!isWalkable(-35,-64));
+ assert(findRoute(-34,-71,-19,-46).length);
+});
+test('wishing terrace is connected and wishes survive save normalisation',async()=>{
+ const {LANTERN_TERRACE,normaliseWish}=await import('../src/story.js');
+ assert(findRoute(-31,-66.2,LANTERN_TERRACE.x,LANTERN_TERRACE.z).length);
+ assert.equal(normaliseWish('  團圓  '),'團圓');assert.equal(normaliseWish('x'.repeat(200)).length,120);
+ const result=normaliseSave({name:'Rowan',gender:'female',wishes:[' Home ',null,''],found:[]});assert.deepEqual(result.wishes,['Home']);
+});
