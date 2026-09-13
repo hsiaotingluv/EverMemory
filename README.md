@@ -8,61 +8,63 @@ A quiet 3D game inspired by childhood family visits to Jiufen, Taiwan. Follow fa
 
 To play, download the HTML file and open it in your browser.
 
-## A walk through the memory
+<a name="a-walk-through-the-memory"></a>
 
-### 1. The way home
+## Gameplay walkthrough
+
+### 1. Start or continue your journey
 
 [![EverMemory start page overlooking Jiufen's hillside; click to watch the demo](docs/screenshots/01-start-page.png)](https://youtu.be/lh7YibZymNA)
 
-Return to Jiufen, one childhood memory at a time.
+Start a new journey or continue your saved visit to Jiufen.
 
-### 2. The old bus stop
+### 2. Explore Jiufen and collect teacups
 
 ![The traveller at the old bus stop, with a folded ticket and collectible teacup nearby](docs/screenshots/02-old-bus-stop.png)
 
-Find the old bus ticket and collect your first teacup.
+Walk from the old bus stop, recover the ticket memory, and find a reusable teacup.
 
-### 3. A light, a little riddle
+### 3. Solve lantern riddles for coins
 
 ![A solved lantern riddle about the moon's reflection, awarding ten coins](docs/screenshots/03-lantern-riddle.png)
 
-Solve a lantern riddle. Earn coins for another tea.
+Answer a multiple-choice riddle to earn 10 coins for tea.
 
-### 4. Rainlight Teahouse
+### 4. Find and enter the hidden teahouse
 
 ![The traveller outside Rainlight Teahouse, with the tea table visible through the doorway](docs/screenshots/04-rainlight-teahouse.png)
 
-Step inside the hidden teahouse and find the tea table.
+Bring a collected cup to Rainlight Teahouse to start a tasting.
 
-### 5. What comes back?
+### 5. Choose a tea to reveal a memory
 
 ![Tea selection with mountain oolong, honey black tea and jasmine green tea](docs/screenshots/tea-selection.png)
 
-Choose a tea to uncover a memory. Your first tasting is free.
+Choose oolong, black or green tea for a different flashback. Your first tasting is free.
 
-### 6. A little patience
+### 6. Play the tea-brewing sequence puzzle
 
 ![The four-step tea-making sequence puzzle with a hint to read the instruction card](docs/screenshots/tea-ritual.png)
 
-Put the four tea-making steps in order, then watch your tea brew.
+Arrange the four steps for your first tea in the correct order, then watch the brewing animation.
 
-### 7. The extra purple one
+### 7. Discover and collect childhood stories
 
 ![A childhood memory at Grandma's taro stall, shown as an illustrated story card](docs/screenshots/taro-stall-memory.png)
 
-Visit Grandma's taro stall and let a childhood memory come back.
+Read the three-part story at Grandma's taro stall and keep it in your journal.
 
-### 8. A little wish
+### 8. Write a wish on your lantern
 
 ![The wishing terrace form with a wish to find our way back to one another](docs/screenshots/05-write-a-wish.png)
 
-Write a wish for your lantern to carry.
+Write a personal wish to save in your memory journal and send into the sky.
 
-### 9. A sky full of light
+### 9. Release your lantern into the sky
 
 ![Glowing lanterns rising into the dusk sky above the mountains](docs/screenshots/06-lantern-release.png)
 
-Let it rise into a sky full of light.
+Watch hundreds of lanterns rise with yours, then return to explore.
 
 ## At your own pace
 
