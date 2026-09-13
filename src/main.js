@@ -5,6 +5,7 @@ import { loadRefinements } from './refinements.js';
 import { createMinigames } from './minigame-ui.js';
 import { readJourney, writeJourney } from './journey-store.js';
 import { MEMORIES, WALKWAYS, LANTERN_TERRACE, insideTeahouse, groundHeight, normaliseWish, isWalkable, nearestMemory, streetHeight, findRoute } from './story.js';
+import { PRESENTATION_START, PRESENTATION_STOPS, nextPresentationStop } from './presentation-route.js';
 import { icon } from './icons.js';
 import { Soundscape } from './audio.js';
 
@@ -49,7 +50,7 @@ $('resume').onclick=()=>{const previous=readSave();if(previous)start(previous);}
 $('character-form').onsubmit=e=>{
   e.preventDefault();const data=new FormData(e.target);const name=data.get('name').trim(),gender=data.get('gender');
   if(!name||!['male','female'].includes(gender)){$('form-error').textContent='Add a name and choose a character to begin.';return;}
-  $('form-error').textContent='';start({name:name.slice(0,24),gender,found:[],position:{x:0,z:22}});
+  $('form-error').textContent='';start({name:name.slice(0,24),gender,found:[],position:{...PRESENTATION_START}});
 };
 $('dismiss-controls').onclick=()=>{$('controls-hint').hidden=true;};
 for(const b of document.querySelectorAll('[data-close]'))b.onclick=()=>b.closest('dialog').close();
@@ -72,9 +73,9 @@ function setTime(){world.setDusk(dusk);const label=dusk>.67?'Lantern-lit dusk':d
 function updateProgress(){
   const count=profile.found.length;$('memory-count').textContent=count;
   $('memory-dots').innerHTML=MEMORIES.map(m=>`<i class="${profile.found.includes(m.id)?'found':''}"></i>`).join('');
-  const next=MEMORIES.find(m=>!profile.found.includes(m.id));
-  $('quest-title').textContent=next?'Follow a familiar feeling':'A little more like home';
-  $('quest-hint').textContent=next?next.hint:'All six memories are yours. Stay a little longer.';
+  const stop=nextPresentationStop(profile);
+  $('quest-title').textContent=stop.id==='story-walk-complete'?stop.title:`${stop.index+1} of ${stop.total} · ${stop.title}`;
+  $('quest-hint').textContent=stop.hint;
   world.setFound(profile.found);
 }
 function openMemory(m){if(!m)return;route=[];memory=m;memoryPage=0;renderMemory();openDialog('memory-dialog');sound.chime(659.25);}
@@ -103,7 +104,7 @@ $('wish-text').oninput=()=>{$('wish-length').textContent=$('wish-text').value.le
 $('wish-form').onsubmit=e=>{
   e.preventDefault();const wish=normaliseWish($('wish-text').value);
   if(!wish){$('wish-error').textContent='Write a little wish before you let it go.';$('wish-text').focus();return;}
-  profile.wishes=[...(profile.wishes||[]),wish].slice(-12);save();updateJournal();
+  profile.wishes=[...(profile.wishes||[]),wish].slice(-12);save();updateJournal();updateProgress();
   $('wish-dialog').close();world.refinements.release(frameTime);cinematic=!reduced;cinemaStart=frameTime;
   $('lantern-view').hidden=!cinematic;$('released-wish').textContent=wish;
   $('wish-text').value='';$('wish-length').textContent='0 / 120';
@@ -134,10 +135,17 @@ function updateMap(){
   if(!profile)return;
   const mx=x=>249+x*4.9,mz=z=>28+(z+75)*3.65;
   const paths=WALKWAYS.map(w=>`<rect x="${mx(w.x1)}" y="${mz(w.z1)}" width="${(w.x2-w.x1)*4.9}" height="${(w.z2-w.z1)*3.65}" rx="2" fill="#d2c5a7"/>`).join('');
+  const storyAnchors=[PRESENTATION_START,...PRESENTATION_STOPS],storyPoints=[];
+  for(let i=1;i<storyAnchors.length;i++){
+    const from=storyAnchors[i-1],to=storyAnchors[i],segment=findRoute(from.x,from.z,to.x,to.z);
+    for(let j=0;j<segment.length;j+=4)storyPoints.push(`${mx(segment[j].x)},${mz(segment[j].z)}`);
+    const last=segment.at(-1);if(last)storyPoints.push(`${mx(last.x)},${mz(last.z)}`);
+  }
+  const storyPath=storyPoints.length?`<polyline points="${storyPoints.join(' ')}" fill="none" stroke="#a24932" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 5" opacity=".9"/>`:'';
   const destinations=[...MEMORIES,LANTERN_TERRACE];
   const markers=destinations.map((m,i)=>{const x=mx(m.x),y=mz(m.z),found=profile.found.includes(m.id);return `<g role="button" tabindex="0" aria-label="Walk to ${m.place}" data-destination="${m.id}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="19" fill="transparent"/><circle cx="${x}" cy="${y}" r="10" fill="${found?'#e8dfc7':'#b67d51'}" stroke="#a58159"/><text x="${x}" y="${y+3.5}" text-anchor="middle" font-size="10" fill="${found?'#706a50':'#fff8e5'}">${i+1}</text></g>`;}).join('');
   const p=character.root.position;
-  $('map-illustration').innerHTML=`<svg viewBox="0 0 510 420" role="group" aria-label="Neighbourhood map with seven destinations"><path d="M23 25Q40 90 25 190T28 405" fill="none" stroke="#a9c0af" stroke-width="30" opacity=".6"/>${paths}${markers}<circle cx="${mx(p.x)}" cy="${mz(p.z)}" r="6" fill="#325d46" stroke="#fff8e3" stroke-width="2"/><text x="97" y="28" text-anchor="middle" fill="#566249" font-size="11">Rainlight Teahouse</text><text x="389" y="28" text-anchor="middle" fill="#566249" font-size="11">Wishing terrace</text><path d="M472 77V55m-5 8 5-8 5 8" stroke="#9d8158" fill="none"/><text x="472" y="45" text-anchor="middle" font-size="10" fill="#9d8158">N</text></svg>`;
+  $('map-illustration').innerHTML=`<svg viewBox="0 0 510 420" role="group" aria-label="Neighbourhood map with seven destinations and a rust-coloured story walk"><path d="M23 25Q40 90 25 190T28 405" fill="none" stroke="#a9c0af" stroke-width="30" opacity=".6"/>${paths}${storyPath}${markers}<circle cx="${mx(p.x)}" cy="${mz(p.z)}" r="6" fill="#325d46" stroke="#fff8e3" stroke-width="2"/><text x="97" y="28" text-anchor="middle" fill="#566249" font-size="11">Rainlight Teahouse</text><text x="389" y="28" text-anchor="middle" fill="#566249" font-size="11">Wishing terrace</text><path d="M472 77V55m-5 8 5-8 5 8" stroke="#9d8158" fill="none"/><text x="472" y="45" text-anchor="middle" font-size="10" fill="#9d8158">N</text></svg>`;
   const mapSvg=$('map-illustration').querySelector('svg');
   mapSvg.addEventListener('click',event=>{
     if(event.target.closest('[data-destination]'))return;
@@ -271,7 +279,7 @@ function frame(ms){
 async function boot(){
   try{
     await new Promise(resolve=>requestAnimationFrame(resolve));assets=await loadRefinements();world=createWorld($('world'),assets);
-    minigames=createMinigames({world,assets,getProfile:()=>profile,save,notify,openDialog,onMemory:(teaId)=>{if(teaId==='oolong'&&!profile.found.includes('tea')){profile.found.push('tea');updateProgress();updateJournal();save();pendingEnding=profile.found.length===MEMORIES.length;}}});
+    minigames=createMinigames({world,assets,getProfile:()=>profile,save,notify,openDialog,onProgress:updateProgress,onMemory:(teaId)=>{if(teaId==='oolong'&&!profile.found.includes('tea')){profile.found.push('tea');updateProgress();updateJournal();save();pendingEnding=profile.found.length===MEMORIES.length;}}});
     bindWorldInput();
     window.addEventListener('resize',()=>world.resize());
     world.renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();keys.clear();$('error-message').textContent='The graphics connection was interrupted. Reload to continue from your last saved place.';$('error-screen').hidden=false;});

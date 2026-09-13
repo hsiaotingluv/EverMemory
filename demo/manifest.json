@@ -1,0 +1,14 @@
+{
+  "file": "gpt6.mp4",
+  "release": "https://github.com/hsiaotingluv/EverMemory/releases/tag/hackathon-demo-2026-09-13",
+  "download": "https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/gpt6.mp4",
+  "bytes": 474715429,
+  "sha256": "50afc5d3aea62fea9635ab65ff3da48eebe26600da7efcaf39cac3646a7910c9",
+  "durationSeconds": 111.3,
+  "width": 3840,
+  "height": 2160,
+  "framesPerSecond": 30,
+  "videoCodec": "hevc",
+  "audioCodec": "aac",
+  "source": "Creator-supplied final demo, uploaded unchanged"
+}

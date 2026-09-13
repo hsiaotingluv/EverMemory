@@ -7,7 +7,7 @@ import { createMinigameObjects } from './minigame-world.js';
 import { RULES, CUPS, TEAS, RIDDLES, RITUAL, normaliseGame, nearestGameObject, collectCup, solveRiddle, beginTasting, submitRitual, abandonPuzzle, drinkTea, finishTasting, checkpointVideo, eatMooncake, drainEnergy, speedMultiplier } from './minigames.js';
 
 // A small adapter keeps minigames independent of the town and its camera controls.
-export function createMinigames({ world, assets, getProfile, save, notify, openDialog, onMemory }) {
+export function createMinigames({ world, assets, getProfile, save, notify, openDialog, onMemory, onProgress = () => {} }) {
   const $ = id => document.getElementById(id);
   const objects = createMinigameObjects(world.scene);
   const dialog = document.createElement('dialog');
@@ -23,7 +23,7 @@ export function createMinigames({ world, assets, getProfile, save, notify, openD
   let brewPreview=null;
   let current = null, selectedCup = null, sequence = [], shuffled = [], brewSeconds = 0, video = null, replay = false, lowReminder = -60, thoughtUntil = 0, lastSecond = -1;
   const game = () => getProfile()?.game;
-  const persist = () => { updateHud(); objects.sync(game()); save(); };
+  const persist = () => { updateHud(); objects.sync(game()); save(); onProgress(); };
   function show(markup, focusSelector) {
     if(brewPreview){brewPreview.dispose();brewPreview=null;}
     stopVideo(); $('game-content').innerHTML = markup;

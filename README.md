@@ -1,6 +1,12 @@
-# The way home
+# EverMemory
 
 A local Three.js adventure through an imagined Jiufen. A returning traveller recovers six fictional childhood memories through family, food and familiar places.
+
+[Final demo video (111.3 seconds, original 4K MP4)](https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/gpt6.mp4) · [Download the playable HTML](https://github.com/hsiaotingluv/EverMemory/releases/download/hackathon-demo-2026-09-13/evermemory.html) · [Hackathon release](https://github.com/hsiaotingluv/EverMemory/releases/tag/hackathon-demo-2026-09-13)
+
+The original demo is hosted as a release asset because it exceeds GitHub's regular Git file limit. Its duration, format and SHA-256 checksum are recorded in [demo/manifest.json](demo/manifest.json).
+
+For the project premise, proposed hackathon tracks, source evidence and review route, see [the submission guide](SUBMISSION.md).
 
 ## Run locally
 
@@ -9,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:4173/ . The preview is bound to the local machine. This project has not been published.
+Open http://127.0.0.1:4173/ . The preview is bound to the local machine. Source and downloadable files are hosted on GitHub; a public game website has not been deployed.
 
 ## Play
 
@@ -18,6 +24,8 @@ Name your character and choose male or female, then enter the town. On desktop, 
 On mobile, the left thumb control moves the character. Drag the world to look, and use the memory button when close to an object. Choosing a numbered map stop, or tapping a walkable path on the map, starts a walk along the connected lanes; manual movement takes over immediately.
 
 Read all three pages of a memory and select **Keep this memory** to add it to the journal. Progress and position save to this browser. **Continue your journey** resumes it. **Begin your journey** creates a new character and replaces the current browser save when the character form is submitted.
+
+The HUD opens with a six-stop story walk designed for a smooth live presentation: bus-ticket memory, blue cup, first lantern riddle, Rainlight Teahouse, first tea memory and the wishing terrace. The neighbourhood map draws the same route as a restrained rust line. After the lantern release, the journal holds the recovered memory and wish.
 
 Ambient sound starts only when enabled. Settings offer time of day, visual detail and reduced motion. The journal can be downloaded as a text letter.
 
@@ -38,7 +46,7 @@ npm run build
 
 The build produces the static app in `dist/` and a self-contained `outputs/evermemory.html` (about 8.3 MiB, including Three.js, fonts, the Blender models and three memory films). The standalone file includes everything needed to render; WebGL must be available in the browser. Browser save behaviour for `file://` URLs depends on the browser, so localhost is recommended for reliable persistence.
 
-Thirty-five tests cover navigation, level entrance paths, interior access and furniture boundaries, wish validation, original memories, tea and riddle rules, energy, rewards and resumable saves. Browser checks exercise the title, exploration, tea brewing, film playback, payment recovery and desktop/mobile layouts.
+Thirty-seven tests cover navigation, the six-stop story walk, level entrance paths, interior access and furniture boundaries, wish validation, original memories, tea and riddle rules, energy, rewards and resumable saves. Browser checks exercise the title, exploration, tea brewing, film playback, payment recovery and desktop/mobile layouts.
 
 ## Project structure
 
