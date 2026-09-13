@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T05:52:25.796746+00:00",
+  "title": "Design System: EverMemory",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f3eddf",
+        "tonalRamp": [
+          "oklch(15.00% 0.0197 87.51)",
+          "oklch(26.43% 0.0197 87.51)",
+          "oklch(37.86% 0.0197 87.51)",
+          "oklch(49.29% 0.0197 87.51)",
+          "oklch(60.71% 0.0197 87.51)",
+          "oklch(72.14% 0.0197 87.51)",
+          "oklch(83.57% 0.0197 87.51)",
+          "oklch(95.00% 0.0197 87.51)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#354338",
+        "tonalRamp": [
+          "oklch(15.00% 0.0261 151.36)",
+          "oklch(26.43% 0.0261 151.36)",
+          "oklch(37.86% 0.0261 151.36)",
+          "oklch(49.29% 0.0261 151.36)",
+          "oklch(60.71% 0.0261 151.36)",
+          "oklch(72.14% 0.0261 151.36)",
+          "oklch(83.57% 0.0261 151.36)",
+          "oklch(95.00% 0.0261 151.36)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft",
+        "canonical": "#626a55",
+        "tonalRamp": [
+          "oklch(15.00% 0.0336 124.54)",
+          "oklch(26.43% 0.0336 124.54)",
+          "oklch(37.86% 0.0336 124.54)",
+          "oklch(49.29% 0.0336 124.54)",
+          "oklch(60.71% 0.0336 124.54)",
+          "oklch(72.14% 0.0336 124.54)",
+          "oklch(83.57% 0.0336 124.54)",
+          "oklch(95.00% 0.0336 124.54)"
+        ]
+      },
+      "rust": {
+        "role": "primary",
+        "displayName": "Rust",
+        "canonical": "#a24932",
+        "tonalRamp": [
+          "oklch(15.00% 0.1238 35.58)",
+          "oklch(26.43% 0.1238 35.58)",
+          "oklch(37.86% 0.1238 35.58)",
+          "oklch(49.29% 0.1238 35.58)",
+          "oklch(60.71% 0.1238 35.58)",
+          "oklch(72.14% 0.1238 35.58)",
+          "oklch(83.57% 0.1238 35.58)",
+          "oklch(95.00% 0.1238 35.58)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#cdc9b6",
+        "tonalRamp": [
+          "oklch(15.00% 0.0262 97.17)",
+          "oklch(26.43% 0.0262 97.17)",
+          "oklch(37.86% 0.0262 97.17)",
+          "oklch(49.29% 0.0262 97.17)",
+          "oklch(60.71% 0.0262 97.17)",
+          "oklch(72.14% 0.0262 97.17)",
+          "oklch(83.57% 0.0262 97.17)",
+          "oklch(95.00% 0.0262 97.17)"
+        ]
+      },
+      "rust-hover": {
+        "role": "primary",
+        "displayName": "Rust Hover",
+        "canonical": "#853c2a",
+        "tonalRamp": [
+          "oklch(15.00% 0.1050 35.04)",
+          "oklch(26.43% 0.1050 35.04)",
+          "oklch(37.86% 0.1050 35.04)",
+          "oklch(49.29% 0.1050 35.04)",
+          "oklch(60.71% 0.1050 35.04)",
+          "oklch(72.14% 0.1050 35.04)",
+          "oklch(83.57% 0.1050 35.04)",
+          "oklch(95.00% 0.1050 35.04)"
+        ]
+      },
+      "button-paper": {
+        "role": "neutral",
+        "displayName": "Button Paper",
+        "canonical": "#fff9eb",
+        "tonalRamp": [
+          "oklch(15.00% 0.0195 87.51)",
+          "oklch(26.43% 0.0195 87.51)",
+          "oklch(37.86% 0.0195 87.51)",
+          "oklch(49.29% 0.0195 87.51)",
+          "oklch(60.71% 0.0195 87.51)",
+          "oklch(72.14% 0.0195 87.51)",
+          "oklch(83.57% 0.0195 87.51)",
+          "oklch(95.00% 0.0195 87.51)"
+        ]
+      },
+      "field-paper": {
+        "role": "neutral",
+        "displayName": "Field Paper",
+        "canonical": "rgba(255,253,244,.65)",
+        "tonalRamp": [
+          "oklch(15.00% 0.0120 96.42)",
+          "oklch(26.43% 0.0120 96.42)",
+          "oklch(37.86% 0.0120 96.42)",
+          "oklch(49.29% 0.0120 96.42)",
+          "oklch(60.71% 0.0120 96.42)",
+          "oklch(72.14% 0.0120 96.42)",
+          "oklch(83.57% 0.0120 96.42)",
+          "oklch(95.00% 0.0120 96.42)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "canonical": "#b7b8a5",
+        "tonalRamp": [
+          "oklch(15.00% 0.0263 109.45)",
+          "oklch(26.43% 0.0263 109.45)",
+          "oklch(37.86% 0.0263 109.45)",
+          "oklch(49.29% 0.0263 109.45)",
+          "oklch(60.71% 0.0263 109.45)",
+          "oklch(72.14% 0.0263 109.45)",
+          "oklch(83.57% 0.0263 109.45)",
+          "oklch(95.00% 0.0263 109.45)"
+        ]
+      },
+      "selected-paper": {
+        "role": "neutral",
+        "displayName": "Selected Paper",
+        "canonical": "#e5dcc5",
+        "tonalRamp": [
+          "oklch(15.00% 0.0322 89.15)",
+          "oklch(26.43% 0.0322 89.15)",
+          "oklch(37.86% 0.0322 89.15)",
+          "oklch(49.29% 0.0322 89.15)",
+          "oklch(60.71% 0.0322 89.15)",
+          "oklch(72.14% 0.0322 89.15)",
+          "oklch(83.57% 0.0322 89.15)",
+          "oklch(95.00% 0.0322 89.15)"
+        ]
+      },
+      "round-paper": {
+        "role": "neutral",
+        "displayName": "Round Paper",
+        "canonical": "#f4ecddeb",
+        "tonalRamp": [
+          "oklch(15.00% 0.0217 83.26)",
+          "oklch(26.43% 0.0217 83.26)",
+          "oklch(37.86% 0.0217 83.26)",
+          "oklch(49.29% 0.0217 83.26)",
+          "oklch(60.71% 0.0217 83.26)",
+          "oklch(72.14% 0.0217 83.26)",
+          "oklch(83.57% 0.0217 83.26)",
+          "oklch(95.00% 0.0217 83.26)"
+        ]
+      },
+      "terracotta": {
+        "role": "primary",
+        "displayName": "Terracotta",
+        "canonical": "#b94832",
+        "tonalRamp": [
+          "oklch(15.00% 0.1510 32.92)",
+          "oklch(26.43% 0.1510 32.92)",
+          "oklch(37.86% 0.1510 32.92)",
+          "oklch(49.29% 0.1510 32.92)",
+          "oklch(60.71% 0.1510 32.92)",
+          "oklch(72.14% 0.1510 32.92)",
+          "oklch(83.57% 0.1510 32.92)",
+          "oklch(95.00% 0.1510 32.92)"
+        ]
+      },
+      "ochre": {
+        "role": "primary",
+        "displayName": "Ochre",
+        "canonical": "#cd9545",
+        "tonalRamp": [
+          "oklch(15.00% 0.1175 73.47)",
+          "oklch(26.43% 0.1175 73.47)",
+          "oklch(37.86% 0.1175 73.47)",
+          "oklch(49.29% 0.1175 73.47)",
+          "oklch(60.71% 0.1175 73.47)",
+          "oklch(72.14% 0.1175 73.47)",
+          "oklch(83.57% 0.1175 73.47)",
+          "oklch(95.00% 0.1175 73.47)"
+        ]
+      },
+      "warm-plaster": {
+        "role": "primary",
+        "displayName": "Warm Plaster",
+        "canonical": "#e0bd8b",
+        "tonalRamp": [
+          "oklch(15.00% 0.0768 76.20)",
+          "oklch(26.43% 0.0768 76.20)",
+          "oklch(37.86% 0.0768 76.20)",
+          "oklch(49.29% 0.0768 76.20)",
+          "oklch(60.71% 0.0768 76.20)",
+          "oklch(72.14% 0.0768 76.20)",
+          "oklch(83.57% 0.0768 76.20)",
+          "oklch(95.00% 0.0768 76.20)"
+        ]
+      },
+      "burgundy-timber": {
+        "role": "secondary",
+        "displayName": "Burgundy Timber",
+        "canonical": "#653a2b",
+        "tonalRamp": [
+          "oklch(15.00% 0.0660 39.92)",
+          "oklch(26.43% 0.0660 39.92)",
+          "oklch(37.86% 0.0660 39.92)",
+          "oklch(49.29% 0.0660 39.92)",
+          "oklch(60.71% 0.0660 39.92)",
+          "oklch(72.14% 0.0660 39.92)",
+          "oklch(83.57% 0.0660 39.92)",
+          "oklch(95.00% 0.0660 39.92)"
+        ]
+      },
+      "lantern-red": {
+        "role": "secondary",
+        "displayName": "Lantern Red",
+        "canonical": "#d83c21",
+        "tonalRamp": [
+          "oklch(15.00% 0.1969 32.25)",
+          "oklch(26.43% 0.1969 32.25)",
+          "oklch(37.86% 0.1969 32.25)",
+          "oklch(49.29% 0.1969 32.25)",
+          "oklch(60.71% 0.1969 32.25)",
+          "oklch(72.14% 0.1969 32.25)",
+          "oklch(83.57% 0.1969 32.25)",
+          "oklch(95.00% 0.1969 32.25)"
+        ]
+      },
+      "window-amber": {
+        "role": "secondary",
+        "displayName": "Window Amber",
+        "canonical": "#efb762",
+        "tonalRamp": [
+          "oklch(15.00% 0.1213 76.04)",
+          "oklch(26.43% 0.1213 76.04)",
+          "oklch(37.86% 0.1213 76.04)",
+          "oklch(49.29% 0.1213 76.04)",
+          "oklch(60.71% 0.1213 76.04)",
+          "oklch(72.14% 0.1213 76.04)",
+          "oklch(83.57% 0.1213 76.04)",
+          "oklch(95.00% 0.1213 76.04)"
+        ]
+      },
+      "leaf-green": {
+        "role": "secondary",
+        "displayName": "Leaf Green",
+        "canonical": "#65834f",
+        "tonalRamp": [
+          "oklch(15.00% 0.0832 132.88)",
+          "oklch(26.43% 0.0832 132.88)",
+          "oklch(37.86% 0.0832 132.88)",
+          "oklch(49.29% 0.0832 132.88)",
+          "oklch(60.71% 0.0832 132.88)",
+          "oklch(72.14% 0.0832 132.88)",
+          "oklch(83.57% 0.0832 132.88)",
+          "oklch(95.00% 0.0832 132.88)"
+        ]
+      },
+      "sun-amber": {
+        "role": "secondary",
+        "displayName": "Sun Amber",
+        "canonical": "#ffcd86",
+        "tonalRamp": [
+          "oklch(15.00% 0.1051 75.40)",
+          "oklch(26.43% 0.1051 75.40)",
+          "oklch(37.86% 0.1051 75.40)",
+          "oklch(49.29% 0.1051 75.40)",
+          "oklch(60.71% 0.1051 75.40)",
+          "oklch(72.14% 0.1051 75.40)",
+          "oklch(83.57% 0.1051 75.40)",
+          "oklch(95.00% 0.1051 75.40)"
+        ]
+      },
+      "peach-haze": {
+        "role": "secondary",
+        "displayName": "Peach Haze",
+        "canonical": "#e8bf91",
+        "tonalRamp": [
+          "oklch(15.00% 0.0766 69.69)",
+          "oklch(26.43% 0.0766 69.69)",
+          "oklch(37.86% 0.0766 69.69)",
+          "oklch(49.29% 0.0766 69.69)",
+          "oklch(60.71% 0.0766 69.69)",
+          "oklch(72.14% 0.0766 69.69)",
+          "oklch(83.57% 0.0766 69.69)",
+          "oklch(95.00% 0.0766 69.69)"
+        ]
+      },
+      "rose-dusk": {
+        "role": "secondary",
+        "displayName": "Rose Dusk",
+        "canonical": "#b79599",
+        "tonalRamp": [
+          "oklch(15.00% 0.0411 10.23)",
+          "oklch(26.43% 0.0411 10.23)",
+          "oklch(37.86% 0.0411 10.23)",
+          "oklch(49.29% 0.0411 10.23)",
+          "oklch(60.71% 0.0411 10.23)",
+          "oklch(72.14% 0.0411 10.23)",
+          "oklch(83.57% 0.0411 10.23)",
+          "oklch(95.00% 0.0411 10.23)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Home title",
+        "purpose": "The welcome title, with italic rust emphasis."
+      },
+      "memory-body": {
+        "displayName": "Remembered story",
+        "purpose": "Readable serif narrative passages at desktop and mobile sizes."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-dialog",
+        "value": "0 24px 90px #14282044",
+        "purpose": "Lift an active keepsake or utility dialog over the town."
+      },
+      {
+        "name": "memory-prompt",
+        "value": "0 10px 28px #1b322830",
+        "purpose": "Separate the nearby interaction from the scene."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared paper-entry and action easing."
+      },
+      {
+        "name": "paper-entry",
+        "value": "0.45s; opacity 0 to 1; translateY(14px) to 0",
+        "purpose": "The opening transition of a dialog."
+      },
+      {
+        "name": "button-hover",
+        "value": "background 0.2s; transform 0.3s; translateY(-2px)",
+        "purpose": "Small pointer feedback for primary actions."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "OS preference or .reduced-motion disables decorative animation and transitions",
+        "purpose": "Preserve a still exploration option."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "700px"
+      },
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "compact-desktop-height",
+        "value": "max-height: 740px and min-width: 701px"
+      },
+      {
+        "name": "large-touch",
+        "value": "pointer: coarse and min-width: 701px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The principal action on paper, with a trailing ink arrow.",
+      "html": "<button class=\"ds-primary\">Begin your journey <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M6 5h13v13\"/></svg></button>",
+      "css": ".ds-primary{display:flex;align-items:center;justify-content:space-between;gap:38px;background:var(--rust,#a24932);color:#fff9eb;border:0;border-radius:5px;min-height:51px;padding:14px 20px;font:12px var(--sans,\"Memory Sans\",sans-serif);letter-spacing:.025em;text-align:left;cursor:pointer;transition:background .2s,transform .3s cubic-bezier(.16,1,.3,1)}.ds-primary svg{width:18px;height:18px;flex-shrink:0}.ds-primary:hover{background:#853c2a;transform:translateY(-2px)}.ds-primary:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px;}.ds-primary:disabled{opacity:.6;cursor:wait}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "A quieter action with a fine offset underline.",
+      "html": "<button class=\"ds-text-action\">Continue your journey</button>",
+      "css": ".ds-text-action{border:0;padding:10px 0;background:none;color:var(--ink,#354338);font:12px var(--sans,\"Memory Sans\",sans-serif);text-align:left;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#8d826070;cursor:pointer}.ds-text-action:hover{color:var(--rust,#a24932);text-decoration-color:var(--rust,#a24932)}.ds-text-action:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px;}"
+    },
+    {
+      "name": "Character name",
+      "kind": "input",
+      "refersTo": "field-name",
+      "description": "A labelled, lightly translucent name field.",
+      "html": "<label class=\"ds-name-label\" for=\"ds-name\">Your character’s name</label><input id=\"ds-name\" class=\"ds-name\" placeholder=\"A name to come home to\" maxlength=\"24\" />",
+      "css": ".ds-name-label{display:block;font:500 11px var(--sans,\"Memory Sans\",sans-serif);color:var(--ink,#354338);margin-bottom:11px}.ds-name{width:100%;background:rgba(255,253,244,.65);border:1px solid #b7b8a5;border-radius:4px;padding:13px 12px;font:13px var(--sans,\"Memory Sans\",sans-serif);color:var(--ink,#354338);caret-color:var(--rust,#a24932)}.ds-name::placeholder{color:#73745e}.ds-name:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px;}"
+    },
+    {
+      "name": "World tool navigation",
+      "kind": "nav",
+      "refersTo": "button-round",
+      "description": "Circular journal control representing the vertical world-tool navigation.",
+      "html": "<nav class=\"ds-tools\" aria-label=\"World tools\"><button class=\"ds-round\" aria-label=\"Memory journal\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 6C9 4 5 4 3 5v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-2-1-6-1-9 1Zm0 0v14M6 8h3m-3 3h3m6-3h3m-3 3h3\"/></svg><small>Journal</small></button></nav>",
+      "css": ".ds-tools{padding-left:70px}.ds-round{position:relative;width:43px;height:43px;border:1px solid #d9d2b2;background:#f4ecddeb;color:var(--ink,#354338);border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:background .2s,transform .2s}.ds-round svg{width:20px;height:20px;stroke-width:1.5}.ds-round small{position:absolute;right:46px;white-space:nowrap;font:9px var(--sans,\"Memory Sans\",sans-serif);background:#f4ecddd9;padding:5px 8px;border-radius:3px;color:#344432}.ds-round:hover{background:#fff8e8;transform:translateY(-2px)}.ds-round:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px;}"
+    },
+    {
+      "name": "Paper panel",
+      "kind": "card",
+      "refersTo": "paper-dialog",
+      "description": "The shared paper-dialog surface, shown as a static panel for preview.",
+      "html": "<section class=\"ds-paper\"><h2>Little things,<br><em>kept forever.</em></h2><p>Your memories of Jiufen, one familiar feeling at a time.</p></section>",
+      "css": ".ds-paper{width:520px;max-width:100%;padding:42px;background:var(--paper,#f3eddf);color:var(--ink,#354338);border-radius:9px;box-shadow:0 24px 90px #14282044}.ds-paper h2{margin:0;font:500 47px/.95 var(--serif,\"Memory Serif\",Georgia,serif);letter-spacing:-.025em}.ds-paper em{font-weight:400;color:var(--rust,#a24932)}.ds-paper p{margin:18px 0 0;font:12px/1.7 var(--sans,\"Memory Sans\",sans-serif);color:var(--soft,#626a55)}"
+    },
+    {
+      "name": "Journal entry",
+      "kind": "custom",
+      "description": "An actual collected-memory row, using the project’s ticket icon and first memory.",
+      "html": "<button class=\"ds-entry\"><span class=\"ds-entry-icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h16v4c-3 0-3 4 0 4v4H4v-4c3 0 3-4 0-4ZM15 6v2m0 2v2m0 2v2m0 1v1M7 9h5m-5 3h4m-4 3h5\"/></svg></span><span><strong>One more bend</strong><small>The old bus stop</small></span><span class=\"ds-entry-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M6 5h13v13\"/></svg></span></button>",
+      "css": ".ds-entry{display:flex;align-items:center;gap:15px;padding:16px 0;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line,#cdc9b6);background:none;color:var(--ink,#354338);cursor:pointer}.ds-entry-icon{width:40px;height:40px;display:grid;place-items:center;color:var(--rust,#a24932);flex-shrink:0}.ds-entry-icon svg{width:27px;height:27px;stroke-width:1.3}.ds-entry strong{font:600 22px var(--serif,\"Memory Serif\",Georgia,serif);display:block}.ds-entry small{display:block;font:10px/1.5 var(--sans,\"Memory Sans\",sans-serif);color:var(--soft,#626a55);margin-top:3px}.ds-entry-arrow{margin-left:auto}.ds-entry-arrow svg{width:16px;height:16px}.ds-entry:focus-visible{outline:2px solid var(--rust,#a24932);outline-offset:5px;}"
+    },
+    {
+      "name": "Memory progress",
+      "kind": "custom",
+      "description": "Six petal-like marks; warm fill distinguishes collected memories.",
+      "html": "<div class=\"ds-memory-progress\" aria-label=\"Two of six memories\"><span aria-hidden=\"true\"><i class=\"ds-found\"></i><i class=\"ds-found\"></i><i></i><i></i><i></i><i></i></span><small>2 / 6 memories</small></div>",
+      "css": ".ds-memory-progress{display:flex;flex-direction:column;gap:9px;color:#f3eddf;text-shadow:0 1px 6px #253a2f;padding:16px;background:#354338}.ds-memory-progress>span{display:flex;gap:6px}.ds-memory-progress i{width:11px;height:11px;border:1px solid #f6e4b1;transform:rotate(45deg);border-radius:50% 50% 0 50%}.ds-memory-progress i.ds-found{background:#f3cc7a}.ds-memory-progress small{font:10px var(--sans,\"Memory Sans\",sans-serif)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The way home",
+    "overview": "The way home pairs a living hillside with the quiet material of a kept letter. Jiufen's steep stone lanes, stacked tea houses, Traditional Chinese signs, red lanterns and distant mountain ridges establish the place. Warm, vibrant architecture carries the scene; ivory paper and small ink controls give the traveller room to explore.\n\nThe confirmed visual authority is the user's Jiufen moodboard and Sakura Peak reference, implemented directly in Three.js. There is no approved generated design comp. Geometry, weathered canvas textures, signs, SVG icons and ambient audio are authored in code. The current world is a finite, compressed neighbourhood with six fictional memories and an intentionally generic placeholder character. These are prototype constraints, not claims of geographic completeness or a finished character-art system.",
+    "keyCharacteristics": [
+      "Warm terracotta, ochre and plaster façades framed by burgundy timber.",
+      "Amber light, peach haze and rose-toned dusk; green concentrated in foliage.",
+      "Expressive serif titles, readable serif memory passages and restrained sans-serif controls.",
+      "Full-viewport exploration with quiet edge controls and layered paper dialogs.",
+      "Original line icons and a recurring petal-shaped memory marker."
+    ],
+    "rules": [
+      {
+        "name": "Warm Town",
+        "body": "Keep architecture warm and distinct from vegetation. Green belongs chiefly to foliage, distant ridges and quiet ink.",
+        "section": "colors"
+      },
+      {
+        "name": "Title First",
+        "body": "Keep the title first in reading order. On the welcome screen, group the Jiufen stamp beside the title at its upper right with a 24px gap and 8px optical top offset, as requested in the browser comment. The stamp stays hidden below 700px. Place HUD and memory dialog location metadata remain below their headings.",
+        "section": "typography"
+      },
+      {
+        "name": "World First",
+        "body": "Use paper and shadow to make an active task readable while preserving a clear view of the town. Keep exploration controls at the edges.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve Jiufen's hillside identity through stairs, dense tea houses, lanterns, Traditional Chinese place signs and mountain depth.",
+      "Do keep the town warm and vibrant, with burgundy structure and amber windows supporting terracotta, ochre and plaster.",
+      "Do use the existing serif/sans pairing and title-before-location hierarchy.",
+      "Do use original inline SVG line icons with visible focus states and accessible action names.",
+      "Do check desktop and touch layouts, especially memory captions, dialog scrolling and joystick clearance.",
+      "Do describe the world as an imagined, compressed neighbourhood and its six memories as fictional."
+    ],
+    "donts": [
+      "Don't turn the architecture uniformly green or let haze erase the warm colour differences.",
+      "Don't introduce a torii or other place-defining motif that replaces Jiufen's ordinary street sign and timber-post gateway.",
+      "Don't replace the working 3D environment with a flat reference image or imply that a generated comp was approved.",
+      "Don't mix platform-dependent text glyphs into the established SVG action-icon system.",
+      "Don't rotate mobile memory-art captions into vertical text or place them across the central illustration.",
+      "Don't present the generic character or finite neighbourhood as a completed production art scope."
+    ]
+  }
+}

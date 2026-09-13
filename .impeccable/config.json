@@ -1,0 +1,882 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#ddc9a8",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.344Z",
+        "reason": "Agent: intentional warm canvas fallback behind the Three.js scene; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d8b293",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.386Z",
+        "reason": "Agent: intentional warm text-selection background; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#263b31",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.427Z",
+        "reason": "Agent: intentional dark text-selection foreground; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(42,54,40,.23)",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.468Z",
+        "reason": "Agent: intentional bottom vignette that separates the title footer from the scene; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(21,41,33,.37)",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.512Z",
+        "reason": "Agent: intentional gameplay edge vignette that keeps light HUD text readable over the world; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#8a8e7955",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.554Z",
+        "reason": "Agent: intentional the fine divider beside the title-screen chapter label; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#787a5450",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.596Z",
+        "reason": "Agent: intentional the ambient-sound control border; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#455343",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.638Z",
+        "reason": "Agent: intentional introductory prose on the ivory welcome surface; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#8d826070",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.680Z",
+        "reason": "Agent: intentional the quiet underline on secondary text actions; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#7d8966",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.724Z",
+        "reason": "Agent: intentional the small outlined memory motif beside the pace note; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff6dd",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.766Z",
+        "reason": "Agent: intentional light world-caption text; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#28382d",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.813Z",
+        "reason": "Agent: intentional world-caption text shadow over the live scene; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff2d1",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.860Z",
+        "reason": "Agent: intentional the short world-caption rule; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff7dc",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.905Z",
+        "reason": "Agent: intentional the sound prompt over the scene on the title screen; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "27px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.949Z",
+        "reason": "Agent: intentional desktop welcome wordmark; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "9px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:24.996Z",
+        "reason": "Agent: intentional compact metadata, optional keyboard labels and small supporting HUD labels; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "30px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.044Z",
+        "reason": "Agent: intentional Traditional Chinese stamp and desktop art caption; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "16px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.092Z",
+        "reason": "Agent: intentional welcome introductory prose; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "20px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.138Z",
+        "reason": "Agent: intentional Chinese art caption at the mobile breakpoint and inherited SVG action wrappers; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "10px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.184Z",
+        "reason": "Agent: intentional utility guidance, journal metadata, memory pagination and compact action labels; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "17px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.231Z",
+        "reason": "Agent: intentional the scenic serif caption and prominent interaction keycap; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "8px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.279Z",
+        "reason": "Agent: intentional compass cardinal letters, map legend and ancillary footer microcopy; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#73745e",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.327Z",
+        "reason": "Agent: intentional the name field placeholder; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#bfc0ac",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.374Z",
+        "reason": "Agent: intentional unselected character option borders; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#918f73",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.421Z",
+        "reason": "Agent: intentional the unselected radio outline; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f0e5ce",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.468Z",
+        "reason": "Agent: intentional the selected radio inner border; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d5ac80",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.517Z",
+        "reason": "Agent: intentional skin colour in the generic onboarding portrait; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#80917a",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.564Z",
+        "reason": "Agent: intentional the male placeholder portrait shirt; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#af795b",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.611Z",
+        "reason": "Agent: intentional the female placeholder portrait shirt; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "51px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.657Z",
+        "reason": "Agent: intentional desktop onboarding heading; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "13px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.704Z",
+        "reason": "Agent: intentional name input, onboarding support copy and responsive welcome/caption copy; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#26392b44",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.749Z",
+        "reason": "Agent: intentional subtle gameplay wordmark text shadow; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f7dca4",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.790Z",
+        "reason": "Agent: intentional the light gameplay brand-mark stroke; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#24312488",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.838Z",
+        "reason": "Agent: intentional place-heading text shadow over the live scene; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f8edcd",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.884Z",
+        "reason": "Agent: intentional time-of-day and character-name text; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f4cf77",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.930Z",
+        "reason": "Agent: intentional the golden time-of-day dot; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#243124",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:25.977Z",
+        "reason": "Agent: intentional quest text shadow over the live scene; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffedc9",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.018Z",
+        "reason": "Agent: intentional light quest guidance text; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f5dda1",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.061Z",
+        "reason": "Agent: intentional the outlined quest memory marker; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d9d2b2",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.105Z",
+        "reason": "Agent: intentional circular tool-control borders; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#253a2f",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.152Z",
+        "reason": "Agent: intentional memory-counter text shadow; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f6e4b1",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.197Z",
+        "reason": "Agent: intentional uncollected memory progress outlines; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f3cc7a",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.243Z",
+        "reason": "Agent: intentional collected memory progress fill; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffefcf",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.288Z",
+        "reason": "Agent: intentional the compass letters; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#edc789",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.333Z",
+        "reason": "Agent: intentional the warm north half of the compass needle; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#eee2c080",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.381Z",
+        "reason": "Agent: intentional the quieter translucent south half of the compass needle; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#3d4e3d",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.428Z",
+        "reason": "Agent: intentional keyboard-guide text on paper; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#52604c",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.475Z",
+        "reason": "Agent: intentional keycap lettering; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#c0c4b0",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.522Z",
+        "reason": "Agent: intentional keycap borders; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#65715b",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.570Z",
+        "reason": "Agent: intentional the dismiss-guide control on paper; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f0deaa",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.618Z",
+        "reason": "Agent: intentional the nearby-memory prompt border; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#7d795c",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.665Z",
+        "reason": "Agent: intentional the secondary label in the nearby-memory prompt; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff6dc",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.715Z",
+        "reason": "Agent: intentional the nearby-memory prompt hover surface; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "3px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.764Z",
+        "reason": "Agent: intentional compact keycaps, desktop tooltips, scrollbar thumb and native quality-select corners; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "24px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.813Z",
+        "reason": "Agent: intentional compact gameplay wordmark and close-control wrapper sizing; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.862Z",
+        "reason": "Agent: intentional Traditional Chinese place metadata and supporting prose; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "15px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.914Z",
+        "reason": "Agent: intentional the repaired horizontal mobile memory-art caption and guide-dismiss sizing; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#24392c73",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:26.964Z",
+        "reason": "Agent: intentional the darkened dialog backdrop over the world; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#51614b",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.011Z",
+        "reason": "Agent: intentional the dialog close-control ink; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#b5b598",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.060Z",
+        "reason": "Agent: intentional the paper-dialog scrollbar thumb; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#dccfb6",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.106Z",
+        "reason": "Agent: intentional fallback memory-art paper before its story-specific tint; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#49342330",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.155Z",
+        "reason": "Agent: intentional subtle depth below memory-object SVG artwork; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#47553d",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.203Z",
+        "reason": "Agent: intentional toast text on its paper surface; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#e7dfcc",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.247Z",
+        "reason": "Agent: intentional the visual-quality select background; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#355b4a",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.295Z",
+        "reason": "Agent: intentional the map legend current-position marker; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#b47d4b",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.343Z",
+        "reason": "Agent: intentional the map legend undiscovered-memory marker; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#eee2c8",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.393Z",
+        "reason": "Agent: intentional the map legend remembered-marker fill; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#927c4c",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.442Z",
+        "reason": "Agent: intentional the map legend remembered-marker outline; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#e9e3d2",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.491Z",
+        "reason": "Agent: intentional the temporary loading notice surface; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.539Z",
+        "reason": "Agent: intentional desktop journal entry headings; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "37px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.587Z",
+        "reason": "Agent: intentional memory title; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "48px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.638Z",
+        "reason": "Agent: intentional closing Chinese mark and recovery-screen heading; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "18px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.691Z",
+        "reason": "Agent: intentional large-desktop welcome introductory prose; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "83px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.742Z",
+        "reason": "Agent: intentional short-desktop two-line title; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "43px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.792Z",
+        "reason": "Agent: intentional short-viewport onboarding heading; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#eee4c270",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.841Z",
+        "reason": "Agent: intentional the mobile joystick outline; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f5ebd01a",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.889Z",
+        "reason": "Agent: intentional the mobile joystick transparent touch area; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff6d798",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.939Z",
+        "reason": "Agent: intentional the mobile joystick thumb outline; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#f0dfb580",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:27.988Z",
+        "reason": "Agent: intentional the mobile interaction button border; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#344d39",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.038Z",
+        "reason": "Agent: intentional the mobile interaction button lettering; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "25px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.087Z",
+        "reason": "Agent: intentional mobile welcome wordmark; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "77px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.137Z",
+        "reason": "Agent: intentional mobile two-line title; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "7px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.183Z",
+        "reason": "Agent: intentional ancillary mobile title-footer imprint; not narrative or action copy; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "45px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.230Z",
+        "reason": "Agent: intentional mobile onboarding heading; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "28px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.279Z",
+        "reason": "Agent: intentional mobile place heading; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "42px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.327Z",
+        "reason": "Agent: intentional mobile paper-dialog heading; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "21px",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.377Z",
+        "reason": "Agent: intentional mobile journal entry headings; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff9",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.423Z",
+        "reason": "Agent: intentional the coarse-pointer joystick outline; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff7",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-13T06:02:28.471Z",
+        "reason": "Agent: intentional the coarse-pointer joystick thumb fill; retained after the desktop/mobile finish review. Exact value and source file only."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#634d35",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.520Z",
+        "reason": "Agent: intentional warm timber backgrounds on Traditional Chinese shop signs; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ead5a3",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.570Z",
+        "reason": "Agent: intentional cream lettering against the dark timber shop signs; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff1be",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.621Z",
+        "reason": "Agent: intentional the bright sun disc, distinct from the amber directional light; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#719ba7",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.670Z",
+        "reason": "Agent: intentional cool sea material separating the warm hillside from its distant setting; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffffff",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.719Z",
+        "reason": "Agent: intentional neutral multiplication base for per-instance foliage vertex colours, not a white UI surface; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff2b3",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.768Z",
+        "reason": "Agent: intentional warm luminous memory diamonds marking interactable objects; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffe6a5",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.819Z",
+        "reason": "Agent: intentional warm luminous rings around uncollected memory objects; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff1b1",
+        "files": [
+          "src/world.js"
+        ],
+        "createdAt": "2026-09-13T06:02:28.870Z",
+        "reason": "Agent: intentional warm ambient motes drifting through the playable scene; scene materials and markers are distinct from UI palette tokens. Fits the requested warmer, more vibrant world."
+      }
+    ]
+  }
+}
